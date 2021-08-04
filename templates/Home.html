@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Lets Check Health</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Health.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+
+
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <form action='/BMI' method="post"> {% csrf_token %}
+       <div class="form-floating mb-3">
+  <input type="float" class="form-control" name="Weight" id="floatingInput" placeholder="65">
+  <label for="floatingInput">Weight(Kg)</label>
+</div>
+<div class="form-floating">
+  <input type="float" class="form-control" name="Hight" id="floatingPassword" placeholder="170">
+  <label for="floatingPassword">Hight(m)</label>
+</div>
+
+    <button type="submit" class="btn btn-dark mt-2">Calculate BMI</button>
+</form><br>
+    <form action='/AgeCalculater' method="post"> {% csrf_token %}
+<div class="form-floating mb-1">
+  <input type="digit" class="form-control" name="age" id="floatingInput1" placeholder="65">
+  <label for="floatingInput">Year Of Birth(YYYY)</label>
+</div>
+
+    <button type="submit" class="btn btn-dark mt-2">Calculate Age</button>
+</form>
+</div>
+
+
+</body>
+</html>
